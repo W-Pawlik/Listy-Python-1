@@ -2,8 +2,8 @@ import random
 
 wylosowane = []
 
-while len(wylosowane) < 6:
-    liczba = random.randint(1, 49)
+while len(wylosowane) < 5:
+    liczba = random.randint(1, 42)
     if liczba not in wylosowane:
         wylosowane.append(liczba)
 
