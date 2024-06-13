@@ -1,28 +1,34 @@
-import math
 
-celsius = float(input("Podaj temperature w stopniach Celsjusza: "))
+imie = input("Podaj swoje imię: ")
+nazwisko = input("Podaj swoje nazwisko: ")
+numer_telefonu = input("Podaj swój numer telefonu: ")
+numer_buta = input("Podaj swój numer buta: ")
 
-fahrenheit = celsius * 9/5 + 32
-print(f"Temperatura w stopniach Fahrenheita: {'+' if fahrenheit >= 0 else '-'}{abs(fahrenheit):.2f}°F")
+imie_isalpha = imie.isalpha()
+nazwisko_isalpha = nazwisko.isalpha()
 
-if fahrenheit <= 32:
-    print("Woda zamarza.")
-elif fahrenheit >= 212:
-    print("Woda wrze.")
-else:
-    print("Woda jest w stanie cieklym.")
+telefon_isdigit = numer_telefonu.isdigit()
+but_isdigit = numer_buta.isdigit()
 
-kelvin = celsius + 273.15
-print(f"Temperatura w Kelwinach: {kelvin:.2f}K")
+imie_corrected = imie.capitalize()
+nazwisko_corrected = nazwisko.capitalize()
 
-fahrenheit_to_celsius = (fahrenheit - 32) * 5/9
-print(f"Temperatura w stopniach Celsjusza z Fahrenheita: {fahrenheit_to_celsius:.2f}°C")
+numer_telefonu_cleaned = ''.join(filter(str.isdigit, numer_telefonu))
+numer_buta_cleaned = ''.join(filter(str.isdigit, numer_buta))
 
-kelvin_to_celsius = kelvin - 273.15
-print(f"Temperatura w stopniach Celsjusza z Kelwinów: {kelvin_to_celsius:.2f}°C")
+female_endings = ["a", "na", "ra", "la", "ela", "ika", "eta", "nia", "ina", "yna", "ewa", "ura", "zia"]
+is_female = any(imie_corrected.endswith(ending) for ending in female_endings)
 
-fahrenheit_to_kelvin = (fahrenheit - 32) * 5/9 + 273.15
-print(f"Temperatura w Kelwinach z Fahrenheita: {fahrenheit_to_kelvin:.2f}K")
+print(f"\nWyniki:")
+print(f"Imię składa się tylko z liter: {imie_isalpha}")
+print(f"Nazwisko składa się tylko z liter: {nazwisko_isalpha}")
+print(f"Numer telefonu składa się wyłącznie z cyfr: {telefon_isdigit}")
+print(f"Numer buta składa się wyłącznie z cyfr: {but_isdigit}")
 
-kelvin_to_fahrenheit = (kelvin - 273.15) * 9/5 + 32
-print(f"Temperatura w stopniach Fahrenheita z Kelwinow: {kelvin_to_fahrenheit:.2f}°F")
+print(f"Poprawione imię: {imie_corrected}")
+print(f"Poprawione nazwisko: {nazwisko_corrected}")
+
+print(f"Oczyszczony numer telefonu: {numer_telefonu_cleaned}")
+print(f"Oczyszczony numer buta: {numer_buta_cleaned}")
+
+print(f"Użytkownik jest kobietą: {is_female}")

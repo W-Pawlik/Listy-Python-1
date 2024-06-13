@@ -7,5 +7,5 @@ Lista 6- ✔
 Lista 7- ✔
 Lista 8- ✔
 Lista 9- ✔
-Lista 10- zad: all
-Lista 11- zad: all
+Lista 10- ✔
+Lista 11- ✔

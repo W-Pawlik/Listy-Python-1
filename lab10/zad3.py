@@ -1,41 +1,16 @@
-import math
 
-def display_trigonometric_values(angle_degrees):
+text = "Długo na szturm i szaniec poglądał w milczeniu. Na koniec rzekł: 'Stracona'."
 
-    angle_radians = math.radians(angle_degrees)
-    sin_value = math.sin(angle_radians)
-    cos_value = math.cos(angle_radians)
-    
-    try:
-        tan_value = math.tan(angle_radians)
-    except Exception as e:
-        tan_value = None
+first_period_index = text.find('.')
 
-    try:
-        if cos_value != 0:
-            cot_value = 1 / tan_value
-        else:
-            cot_value = None
-    except Exception as e:
-        cot_value = None
+if first_period_index != -1:
+    result = text[:first_period_index + 1]
+else:
+    result = text 
 
-    print(f"Kąt: {angle_degrees}°")
-    print(f"sin({angle_degrees}°) = {sin_value:.4f}")
-    print(f"cos({angle_degrees}°) = {cos_value:.4f}")
-    
-    if tan_value is not None and not math.isinf(tan_value):
-        print(f"tan({angle_degrees}°) = {tan_value:.4f}")
-    else:
-        print(f"tan({angle_degrees}°) jest nieokreslony")
-    
-    if cot_value is not None and not math.isinf(cot_value):
-        print(f"cot({angle_degrees}°) = {cot_value:.4f}")
-    else:
-        print(f"cot({angle_degrees}°) jest nieokreslony")
-    
-    
+print(f"Wycinek: {result}")
 
-angles = [0, 70, 90, 35, 180, 240, 360]
+words = ["Zwinny", "lis", "przeskoczył", "nad", "leniwym", "psem", "."]
 
-for angle in angles:
-    display_trigonometric_values(angle)
+sentence = ' '.join(words[:-1]) + words[-1]
+print(f"Zdanie: {sentence}")

@@ -1,25 +1,39 @@
 
-length = 5.0
-width = 3.0
-height = 2.5
 
-door_height = 2.0
-door_width = 0.9
-window_height = 1.2
-window_width = 1.5
+cytat = """
+Magia jest w opinii niektórych ucieleśnieniem Chaosu. Jest kluczem zdolnym otworzyć
+zakazane drzwi. Drzwi, za którymi czai się koszmar, zgroza i niewyobrażalna okropność,
+za którymi czyhają wrogie, destrukcyjne siły, moce czystego zła, mogące unicestwić nie
+tylko tego, kto drzwi te uchyli, ale i cały świat. A ponieważ nie brakuje takich, którzy przy
+owych drzwiach manipulują, kiedyś ktoś popełni błąd, a wówczas zagłada świata będzie
+przesądzona i nieuchronna. Magia jest zatem zemstą i orężem Chaosu. To, że po
+Koniunkcji Sfer ludzie nauczyli posługiwać się magią, jest przekleństwem i zgubą świata.
+Zgubą ludzkości. I tak jest. Ci, którzy uważają magię za Chaos, nie mylą się.
+"""
 
-wall1_area = 4 * (width * height)
+cytat_lower = cytat.lower()
+cytat_swapcase = cytat.swapcase()
+cytat_capitalize = cytat.capitalize()
+cytat_replace = cytat.replace("Magia", "Moc")
+cytat_lstrip = cytat.lstrip()
+cytat_rstrip = cytat.rstrip()
+cytat_reversed = ''.join(reversed(cytat))
+cytat_count_a = cytat.count('a')
+cytat_find_Chaos = cytat.find('Chaos')
+cytat_isalnum = cytat.isalnum()
+cytat_startswith_Magia = cytat.startswith('Magia')
+cytat_endswith_chaos = cytat.endswith('sie.\n')
 
-ceiling_area = length * width
-
-total_area_1 = wall1_area + ceiling_area
-
-door_area = door_height * door_width
-window_area = window_height * window_width
-
-total_wd_area = door_area + window_area
-
-total_area_2 = total_area_1 - total_wd_area
-
-print(f"Całkowita powierzchnia ścian i sufitu bez uwzględnienia drzwi i okien: {total_area_1:.2f} m²")
-print(f"Całkowita powierzchnia ścian i sufitu z uwzględnieniem drzwi i okien: {total_area_2:.2f} m²")
+print(f"Original:\n{cytat}\n")
+print(f"Lower:\n{cytat_lower}\n")
+print(f"Swapcase:\n{cytat_swapcase}\n")
+print(f"Capitalize:\n{cytat_capitalize}\n")
+print(f"Replace 'Magia' with 'Moc':\n{cytat_replace}\n")
+print(f"Left strip:\n{cytat_lstrip}\n")
+print(f"Right strip:\n{cytat_rstrip}\n")
+print(f"Reversed:\n{cytat_reversed}\n")
+print(f"Count 'a': {cytat_count_a}\n")
+print(f"Find 'Chaos': {cytat_find_Chaos}\n")
+print(f"Is alphanumeric: {cytat_isalnum}\n")
+print(f"Starts with 'Magia': {cytat_startswith_Magia}\n")
+print(f"Ends with 'się.\\n': {cytat_endswith_chaos}\n")
